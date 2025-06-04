@@ -7,6 +7,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/stock_view.xml",
+        "views/pack_view.xml",
         "wizard/wizard_view.xml",
     ],
 }
