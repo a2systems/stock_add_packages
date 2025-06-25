@@ -6,6 +6,16 @@ from datetime import date,datetime
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
+    def btn_remove_packages(self):
+        self.ensure_one()
+        domain = [('picking_id','=',self.id),('result_package_id','!=',False)]
+        move_lines = self.env['stock.move.line'].search(domain)
+        if not move_lines:
+            raise ValidationError('No hay paquetes en la transferencia')
+        for move_line in move_lines:
+            move_line.result_package_id = False
+
+
     def btn_add_packages(self):
         self.ensure_one()
         vals = {

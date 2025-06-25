@@ -11,6 +11,10 @@
 				string="Agregar paquetes"
 				type="object"
 				invisible="state != 'assigned'" />
+			<button name="btn_remove_packages"
+				string="Desempaquetar"
+				type="object"
+				invisible="state != 'assigned'" />
 		</xpath>
         </field>
     </record>
