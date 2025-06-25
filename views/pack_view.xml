@@ -6,6 +6,11 @@
         <field name="model">stock.quant.package</field>
         <field name="inherit_id" ref="stock.view_quant_package_form"></field>
 	<field name="arch" type="xml">
+		<xpath expr="//header" position="inside">
+			<button name="rya_unpack" 
+				type="object"
+				string="Desempaquetado Rya" />
+		</xpath>
 		<field name="quant_ids" position="after">
 			<field name="move_line_ids" >
 				<list>
